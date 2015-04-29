@@ -1,0 +1,15 @@
+<h1><%= @category.name %></h1>
+
+<ul>
+<% @articles.each do |article| %>
+<li><h3><a href=<%="/article/#{article.id}"%>><%= article.title %></h3>
+<form action="/article/<%= article.id %>/edit" method="get">
+  <input type="submit" value="edit"/>
+</form>
+<form action="/article/<%= article.id %>" method="post">
+  <input type="hidden" name="_method" value="delete"/>
+  <input type="submit" value="delete"/>
+</form>
+</li>
+<% end %>
+</ul>

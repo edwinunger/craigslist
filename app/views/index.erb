@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Welcome to CraigsList</h1>
+
+<ul><h3>Please select a category:</h3>
+  <% @category.each do |category| %>
+  <li>
+  <a href=<%="/category/#{category.id}"%>><%= category.name %></a>
+  </li>
+  <% end %>
+</ul>
+
+<a href="/article/new">post to classifieds</a>
+</div>

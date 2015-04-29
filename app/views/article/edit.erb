@@ -1,0 +1,21 @@
+<% @article.errors.full_messages.each do |error| %>
+  <h3><%= error %></h3>
+<% end %>
+
+<form method="post" action="/article/<%= @article.id %>">
+  <input type="hidden" name="_method" value="put" />
+  <input type ="text" name="title" placeholder="title" value="<%= @article.title %>" />
+  <input type="text" name="description" placeholder="description" value="<%= @article.description %>" />
+    <select name="category_id">
+      <option value="1">community</option>
+      <option value="2">personals</option>
+      <option value="3">discussions</option>
+      <option value="4">housing</option>
+      <option value="5">for sale</option>
+      <option value="6">services</option>
+      <option value="7">jobs</option>
+      <option value="8">gigs</option>
+      <option value="9">resumes</option>
+    </select>
+  <input type="submit" value="post" />
+</form>
